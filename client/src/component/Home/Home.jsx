@@ -8,8 +8,14 @@ import roomImg3 from "../../assets/roomImg3.png";
 import roomImg4 from "../../assets/roomImg4.png";
 import { assets } from "../../assets/assets";
 import { FaIndianRupeeSign } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const handleButtonAllHotel = () => {
+    navigate("/hotels");
+  };
   return (
     <>
       <div
@@ -75,7 +81,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="featuredHotel p-10 flex flex-col gap-6 w-[100%]"
+        className="featuredHotel p-10 flex flex-col gap-8 w-[100%]"
         style={{
           backgroundColor: "rgb(223, 255, 254)",
         }}
@@ -101,8 +107,8 @@ const Home = () => {
               </div>
             </div>
             <div className="flex flex-row justify-start items-center pl-3 pr-3 gap-0.5">
-               <FaLocationDot className="inline-block mr-2 text-gray-400" />
-               <span className="text-gray-500 text-center">Delhi, India</span>
+              <FaLocationDot className="inline-block mr-2 text-gray-400" />
+              <span className="text-gray-500 text-center">Delhi, India</span>
             </div>
             <div className="flex flex-row justify-between items-center p-3">
               <div className="flex flex-row gap-1 items-center">
@@ -110,7 +116,9 @@ const Home = () => {
                 <span className="font-bold">3500</span>
                 <span className="text-gray-500">/night</span>
               </div>
-              <button className="bg-black text-white rounded-[10px] w-[105px] text-[14px] px-[7px] py-[3px]">View Details</button>
+              <button className="bg-black text-white rounded-[10px] w-[105px] text-[14px] px-[7px] py-[3px]">
+                View Details
+              </button>
             </div>
           </div>
           <div className="h-[300px] w-[270px] border-black border-2 rounded-[20px] flex flex-col">
@@ -127,8 +135,8 @@ const Home = () => {
               </div>
             </div>
             <div className="flex flex-row justify-start items-center pl-3 pr-3 gap-0.5">
-               <FaLocationDot className="inline-block mr-2 text-gray-400" />
-               <span className="text-gray-500 text-center">Kolkata, India</span>
+              <FaLocationDot className="inline-block mr-2 text-gray-400" />
+              <span className="text-gray-500 text-center">Kolkata, India</span>
             </div>
             <div className="flex flex-row justify-between items-center p-3">
               <div className="flex flex-row gap-1 items-center">
@@ -136,7 +144,9 @@ const Home = () => {
                 <span className="font-bold">3000</span>
                 <span className="text-gray-500">/night</span>
               </div>
-              <button className="bg-black text-white rounded-[10px] w-[105px] text-[14px] px-[7px] py-[3px]">View Details</button>
+              <button className="bg-black text-white rounded-[10px] w-[105px] text-[14px] px-[7px] py-[3px]">
+                View Details
+              </button>
             </div>
           </div>
           <div className="h-[300px] w-[270px] border-black border-2 rounded-[20px] flex flex-col">
@@ -153,8 +163,8 @@ const Home = () => {
               </div>
             </div>
             <div className="flex flex-row justify-start items-center pl-3 pr-3 gap-0.5">
-               <FaLocationDot className="inline-block mr-2 text-gray-400" />
-               <span className="text-gray-500 text-center">Pune, India</span>
+              <FaLocationDot className="inline-block mr-2 text-gray-400" />
+              <span className="text-gray-500 text-center">Pune, India</span>
             </div>
             <div className="flex flex-row justify-between items-center p-3">
               <div className="flex flex-row gap-1 items-center">
@@ -162,7 +172,9 @@ const Home = () => {
                 <span className="font-bold">4000</span>
                 <span className="text-gray-500">/night</span>
               </div>
-              <button className="bg-black text-white rounded-[10px] w-[105px] text-[14px] px-[7px] py-[3px]">View Details</button>
+              <button className="bg-black text-white rounded-[10px] w-[105px] text-[14px] px-[7px] py-[3px]">
+                View Details
+              </button>
             </div>
           </div>
           <div className="h-[300px] w-[270px] border-black border-2 rounded-[20px] flex flex-col">
@@ -179,8 +191,10 @@ const Home = () => {
               </div>
             </div>
             <div className="flex flex-row justify-start items-center pl-3 pr-3 gap-0.5">
-               <FaLocationDot className="inline-block mr-2 text-gray-400" />
-               <span className="text-gray-500 text-center">Hyderabad, India</span>
+              <FaLocationDot className="inline-block mr-2 text-gray-400" />
+              <span className="text-gray-500 text-center">
+                Hyderabad, India
+              </span>
             </div>
             <div className="flex flex-row justify-between items-center p-3">
               <div className="flex flex-row gap-1 items-center">
@@ -188,9 +202,55 @@ const Home = () => {
                 <span className="font-bold">3700</span>
                 <span className="text-gray-500">/night</span>
               </div>
-              <button className="bg-black text-white rounded-[10px] w-[105px] text-[14px] px-[7px] py-[3px]">View Details</button>
+              <button className="bg-black text-white rounded-[10px] w-[105px] text-[14px] px-[7px] py-[3px]">
+                View Details
+              </button>
             </div>
           </div>
+        </div>
+        <button
+          className="h-[40px] w-[180px] bg-black text-white rounded-[16px]"
+          style={{
+            alignSelf: "center",
+          }}
+          onClick={handleButtonAllHotel}
+        >
+          View all Hotels
+        </button>
+      </div>
+      <div className="exclusive_offer h-[750px] w-[100%] flex flex-col pt-20 pb-20 px-35 gap-[20px]">
+        <div className="flex flex-row justify-between items-center">
+          <h1 className="text-3xl font-bold">Exclusive Offers</h1>
+            <button className="bg-black text-white rounded-[10px] w-[150px] h-[30px] text-[14px] px-[7px] py-[3px]">
+              <div className="flex flex-row justify-evenly items-center gap-2">
+                <p className="text-white">View All Offers</p>
+                <FaArrowRightLong className="text-white"/>  
+              </div>
+            </button>
+        </div>
+        <p className="text-gray-500">Take advantage of our limited time offers and special packages to enhance your <br /> stay and create unforgettable memories.</p>
+        <div className="flex flex-row gap-[60px]">
+           <div className="h-[200px] w-[300px] rounded-[20px]" style={{
+              backgroundImage:"url('./exclusiveOfferCardImg1.png')",
+              backgroundSize:"cover",
+              backgroundPosition:"center"
+           }}>
+
+           </div>
+           <div className="h-[200px] w-[300px] rounded-[20px]" style={{
+              backgroundImage:"url('./exclusiveOfferCardImg2.png')",
+              backgroundSize:"cover",
+              backgroundPosition:"center"
+           }}>
+
+           </div>
+           <div className="h-[200px] w-[300px] rounded-[20px]" style={{
+              backgroundImage:"url('./exclusiveOfferCardImg3.png')",
+              backgroundSize:"cover",
+              backgroundPosition:"center"
+           }}>
+
+           </div>
         </div>
       </div>
     </>
