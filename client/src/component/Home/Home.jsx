@@ -221,36 +221,81 @@ const Home = () => {
       <div className="exclusive_offer h-[750px] w-[100%] flex flex-col pt-20 pb-20 px-35 gap-[20px]">
         <div className="flex flex-row justify-between items-center">
           <h1 className="text-3xl font-bold">Exclusive Offers</h1>
-            <button className="bg-black text-white rounded-[10px] w-[150px] h-[30px] text-[14px] px-[7px] py-[3px]">
+          <button className="bg-black text-white rounded-[10px] w-[150px] h-[30px] text-[14px] px-[7px] py-[3px]">
+            <div className="flex flex-row justify-evenly items-center gap-2">
+              <p className="text-white">View All Offers</p>
+              <FaArrowRightLong className="text-white" />
+            </div>
+          </button>
+        </div>
+        <p className="text-gray-500">
+          Take advantage of our limited time offers and special packages to
+          enhance your <br /> stay and create unforgettable memories.
+        </p>
+        <div className="flex flex-row gap-[60px]">
+          <div
+            className="h-[250px] w-[300px] rounded-[20px] p-[15px] flex flex-col gap-4"
+            style={{
+              backgroundImage: "url('./exclusiveOfferCardImg1.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="h-[30px] w-[90px] rounded-2xl bg-white pl-[10px] pt-[3px] font-bold">
+              <p>25 % off</p>
+            </div>
+            <h2 className="text-white text-lg font-bold">Summer Escape Package</h2>
+            <p className="text-white text-[14px]">Enjoy a complimentary night and daily breakfast </p>
+            <p className="text-white">Expires in Aug 31</p>
+            <button className="bg-white rounded-[10px] w-[150px] h-[30px] text-[14px] px-[7px] py-[3px]">
               <div className="flex flex-row justify-evenly items-center gap-2">
-                <p className="text-white">View All Offers</p>
-                <FaArrowRightLong className="text-white"/>  
+                <p className="text-black">View All Offers</p>
+                <FaArrowRightLong className="text-black" />
               </div>
             </button>
-        </div>
-        <p className="text-gray-500">Take advantage of our limited time offers and special packages to enhance your <br /> stay and create unforgettable memories.</p>
-        <div className="flex flex-row gap-[60px]">
-           <div className="h-[200px] w-[300px] rounded-[20px]" style={{
-              backgroundImage:"url('./exclusiveOfferCardImg1.png')",
-              backgroundSize:"cover",
-              backgroundPosition:"center"
-           }}>
-
-           </div>
-           <div className="h-[200px] w-[300px] rounded-[20px]" style={{
-              backgroundImage:"url('./exclusiveOfferCardImg2.png')",
-              backgroundSize:"cover",
-              backgroundPosition:"center"
-           }}>
-
-           </div>
-           <div className="h-[200px] w-[300px] rounded-[20px]" style={{
-              backgroundImage:"url('./exclusiveOfferCardImg3.png')",
-              backgroundSize:"cover",
-              backgroundPosition:"center"
-           }}>
-
-           </div>
+          </div>
+          <div
+            className="h-[250px] w-[300px] rounded-[20px] p-[15px] flex flex-col gap-4"
+            style={{
+              backgroundImage: "url('./exclusiveOfferCardImg1.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="h-[30px] w-[90px] rounded-2xl bg-white pl-[10px] pt-[3px] font-bold">
+              <p>20 % off</p>
+            </div>
+            <h2 className="text-white text-lg font-bold">Romantic Gateway</h2>
+            <p className="text-white text-[14px]">Special Couples package including spa treatment </p>
+            <p className="text-white">Expires in Sept 20</p>
+            <button className="bg-white rounded-[10px] w-[150px] h-[30px] text-[14px] px-[7px] py-[3px]">
+              <div className="flex flex-row justify-evenly items-center gap-2">
+                <p className="text-black">View All Offers</p>
+                <FaArrowRightLong className="text-black" />
+              </div>
+            </button>
+          </div>
+          <div
+            className="h-[250px] w-[300px] rounded-[20px] p-[15px] flex flex-col gap-3"
+            style={{
+              backgroundImage: "url('./exclusiveOfferCardImg1.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="h-[30px] w-[90px] rounded-2xl bg-white pl-[10px] pt-[3px] font-bold">
+              <p>30 % off</p>
+            </div>
+            <h2 className="text-white text-lg font-bold">Early Bird Special</h2>
+            <p className="text-white text-[14px]">Book 60 day in advance and save on your stay at any of our luxury properties worldwide</p>
+            <p className="text-white">Expires in Oct 2</p>
+            <button className="bg-white rounded-[10px] w-[150px] h-[30px] text-[14px] px-[7px] py-[3px]">
+              <div className="flex flex-row justify-evenly items-center gap-2">
+                <p className="text-black">View All Offers</p>
+                <FaArrowRightLong className="text-black" />
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </>
