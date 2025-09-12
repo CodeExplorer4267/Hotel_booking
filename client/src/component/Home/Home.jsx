@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
@@ -10,12 +10,22 @@ import { assets } from "../../assets/assets";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
+import axios from 'axios'
 
 const Home = () => {
   const navigate = useNavigate();
+  const [formData,setformData]=useState({
+     name:"",
+     email:"",
+     phone:""
+  })
   const handleButtonAllHotel = () => {
     navigate("/hotels");
   };
+  const handleInputChange=(e)=>{
+     setformData({...formData,[e.target.name]:e.target.value})
+  }
+
   return (
     <>
       <div
