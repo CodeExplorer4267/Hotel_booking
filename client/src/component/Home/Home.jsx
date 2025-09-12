@@ -83,7 +83,7 @@ const Home = () => {
       <div
         className="featuredHotel p-10 flex flex-col gap-8 w-[100%]"
         style={{
-          backgroundColor: "rgb(223, 255, 254)",
+          backgroundColor: "white",
         }}
       >
         <h1 className="font-bold text-3xl text-black text-center">
@@ -218,6 +218,7 @@ const Home = () => {
           View all Hotels
         </button>
       </div>
+      <hr className="border-gray-500 w-[80%] mx-auto"/>
       <div className="exclusive_offer h-[600px] w-[100%] flex flex-col pt-20 pb-20 px-35 gap-[20px]">
         <div className="flex flex-row justify-between items-center">
           <h1 className="text-3xl font-bold">Exclusive Offers</h1>
@@ -307,7 +308,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="guest_say flex flex-col items-center pt-20 pb-20 px-35 gap-[30px] h-[600px] w-[100%]">
+      <hr className="border-gray-500 w-[80%] mx-auto"/>
+      <div className="guest_say flex flex-col items-center pt-20 pb-20 px-35 gap-[30px] h-[500px] w-[100%]">
         <h1 className="text-black text-3xl font-bold">What Our Guests Say</h1>
         <p className="text-gray-500">
           Discover why discerning travelers choose QuickStay for their luxury
@@ -362,20 +364,118 @@ const Home = () => {
           <div className="h-[200px] w-[300px] rounded-2xl p-[15px] flex flex-col gap-2 border-1 border-gray-500">
             <div className="flex flex-row gap-2">
               <img
-                src="./client_1.jpeg"
+                src="./client_4.jpeg"
                 alt=""
                 className="rounded-full h-[50px] w-[60px]"
               />
               <div className="flex flex-col">
-                <p className="text-black font-bold">Abhishek Kumar</p>
-                <p className="text-gray-500">Delhi,India</p>
+                <p className="text-black font-bold">Raj Singh</p>
+                <p className="text-gray-500">Hyderabad,India</p>
               </div>
             </div>
             <img src="https://www.clipartmax.com/png/small/324-3245937_motorhomes-in-greece-orange-5-star-png.png" alt="Motorhomes In Greece - Orange 5 Star Png @clipartmax.com" className="h-[20px] w-[100px]"></img>
-            <p className="text-[14px] text-gray-500 font-bold">"I've used many booking platforms before, but none compare to the personalized experience and attention to detail that QuickStay  provides."</p>
+            <p className="text-[14px] text-gray-500 font-bold">“Absolutely loved my stay! The check-in was quick, the rooms were spotless, and the staff went above and beyond to make me feel comfortable.</p>
           </div>
         </div>
       </div>
+      <hr className="border-gray-500 w-[80%] mx-auto" />
+      <div className="subscribe p-[60px] ">
+          <div className="flex flex-col items-center h-[450px] w-[80%] rounded-2xl mx-auto gap-5 p-[30px]" style={{backgroundColor:"#111827"}}>
+              <h1 className="text-white text-[30px] font-bold">Stay Inspired</h1>
+              <p className="text-gray-500 text-center">Join our newsletter and be the first to discover new destinations, exclusive offers, and <br /> travel inspiration</p>
+              <input type="text" placeholder="Enter Name"  className="h-[40px] w-[300px] border 1 border-white text-white p-[10px] rounded-[10px]"/>
+              <input type="text" placeholder="Enter Email"  className="h-[40px] w-[300px] border 1 border-white text-white p-[10px] rounded-[10px]"/>
+              <input type="text" placeholder="Enter Phone"  className="h-[40px] w-[300px] border 1 border-white text-white p-[10px] rounded-[10px]"/>
+              <button className="bg-black rounded-[10px] w-[150px] h-[30px] text-[14px] px-[7px] py-[3px]">
+              <div className="flex flex-row justify-evenly items-center gap-2">
+                <p className="text-white">Subscribe</p>
+                <FaArrowRightLong className="text-white" />
+              </div>
+            </button>
+            <p className="text-gray-500 text-center">By subscribing, you agree to our Privacy Policy and consent to receive updates.</p>
+          </div>
+      </div>
+      <footer className="bg-gray-50 text-gray-700 border-t">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
+        
+        {/* Brand + About */}
+        <div>
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-black rounded-md flex items-center justify-center text-white font-bold">
+              Q
+            </div>
+            <span className="text-xl font-semibold">QuickStay</span>
+          </div>
+          <p className="mt-4 text-sm leading-relaxed">
+            Discover the world’s most extraordinary places to stay — 
+            from boutique hotels to luxury villas and private islands.
+          </p>
+          <div className="flex space-x-4 mt-4 text-gray-500">
+            <a href="#"><i className="fab fa-instagram"></i></a>
+            <a href="#"><i className="fab fa-twitter"></i></a>
+            <a href="#"><i className="fab fa-facebook"></i></a>
+            <a href="#"><i className="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        {/* Company */}
+        <div>
+          <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
+            Company
+          </h3>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Partners</a></li>
+          </ul>
+        </div>
+
+        {/* Support */}
+        <div>
+          <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
+            Support
+          </h3>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Safety Information</a></li>
+            <li><a href="#">Cancellation Options</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+
+        {/* Newsletter */}
+        <div>
+          <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
+            Stay Updated
+          </h3>
+          <p className="mt-4 text-sm">
+            Subscribe to our newsletter for travel inspiration and special offers.
+          </p>
+          <div className="mt-4 flex">
+            <input
+              type="email"
+              placeholder="Your email"
+              className="w-full px-3 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <button className="px-4 bg-black text-white rounded-r-lg">
+              →
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* Bottom bar */}
+      <div className="border-t py-4 text-center text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center px-6">
+        <p>© 2025 QuickStay. All rights reserved.</p>
+        <div className="flex space-x-6 mt-2 md:mt-0">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </footer>
     </>
   );
 };
