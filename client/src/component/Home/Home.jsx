@@ -23,7 +23,15 @@ const Home = () => {
     navigate("/hotels");
   };
   const handleInputChange=(e)=>{
-     setformData({...formData,[e.target.name]:e.target.value})
+    setformData({
+      ...formData,
+      [e.target.name]:e.target.value
+    })
+  }
+  const handleClick=(e)=>{
+    e.preventDefault();
+    axios.post('http://localhost:5000/sendmail',formData)
+    alert("Subscribed Successfully. Check your email")
   }
 
   return (
@@ -393,10 +401,10 @@ const Home = () => {
           <div className="flex flex-col items-center h-[450px] w-[80%] rounded-2xl mx-auto gap-5 p-[30px]" style={{backgroundColor:"#111827"}}>
               <h1 className="text-white text-[30px] font-bold">Stay Inspired</h1>
               <p className="text-gray-500 text-center">Join our newsletter and be the first to discover new destinations, exclusive offers, and <br /> travel inspiration</p>
-              <input type="text" placeholder="Enter Name"  className="h-[40px] w-[300px] border 1 border-white text-white p-[10px] rounded-[10px]"/>
-              <input type="text" placeholder="Enter Email"  className="h-[40px] w-[300px] border 1 border-white text-white p-[10px] rounded-[10px]"/>
-              <input type="text" placeholder="Enter Phone"  className="h-[40px] w-[300px] border 1 border-white text-white p-[10px] rounded-[10px]"/>
-              <button className="bg-black rounded-[10px] w-[150px] h-[30px] text-[14px] px-[7px] py-[3px]">
+              <input type="text" name="name" placeholder="Enter Name" onChange={handleInputChange}  className="h-[40px] w-[300px] border 1 border-white text-white p-[10px] rounded-[10px]"/>
+              <input type="text" name="email" placeholder="Enter Email" onChange={handleInputChange}  className="h-[40px] w-[300px] border 1 border-white text-white p-[10px] rounded-[10px]"/>
+              <input type="text" name="phone" placeholder="Enter Phone" onChange={handleInputChange}  className="h-[40px] w-[300px] border 1 border-white text-white p-[10px] rounded-[10px]"/>
+              <button onClick={handleClick} className="bg-black rounded-[10px] w-[150px] h-[30px] text-[14px] px-[7px] py-[3px]">
               <div className="flex flex-row justify-evenly items-center gap-2">
                 <p className="text-white">Subscribe</p>
                 <FaArrowRightLong className="text-white" />
