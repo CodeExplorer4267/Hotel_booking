@@ -31,6 +31,12 @@ const Home = () => {
   const handleClick=(e)=>{
     e.preventDefault();
     axios.post('http://localhost:5000/sendmail',formData)
+    .then((res)=>{
+      console.log(res)
+    })
+    .catch((err)=>{
+       console.log(err)
+    })
     alert("Subscribed Successfully. Check your email")
   }
 

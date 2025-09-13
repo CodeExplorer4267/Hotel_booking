@@ -14,8 +14,29 @@ app.get('/',(req,res)=>{
 })
 
 //send mail
-app.post('/sendmail',(req,res)=>{
+app.post('/sendmail',async(req,res)=>{
+    const {name,email,contact}=req.body
+   try {
+    let transporter=nodemailer.createTransport({
+        service:"gmail",
+        auth:{
+            user: "rupambhadra478@gmail.com",  // your email
+            pass: "qdcx rxws rica xakx",
+        }
+    })
+    await transporter.sendMail({
+      from: '"My App" <rupambhadra478@gmail.com>',
+      to: email,
+      subject: "Welcome to Our Newsletter 🎉",
+      text: `Welcome ${name}, thanks for subscribing!`,
+      html: `<h2>Welcome ${name}!</h2><p>Thank you for subscribing with contact: ${contact}</p>`,
+    });
 
+    res.status(200).json({ message: "Email sent successfully!" });
+   } catch (error) {
+     console.log(error);
+     res.status(500).json({success:false,message:"Email not send"})
+   }
 })
 
 app.listen(PORT,()=>{
