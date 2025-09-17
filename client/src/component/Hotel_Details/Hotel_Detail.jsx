@@ -72,6 +72,30 @@ const Hotel_Detail = () => {
             <h1 className="text-3xl font-semibold">3000/Night</h1>
           </div>
         </div>
+        <hr className="text-grey w-[90%] h-[10px] my-[20px] mx-auto"/>
+      </div>
+      <div className="middle_part flex flex-col items-center gap-5">
+        <div className="check w-[90%] h-[100px] border-1 border-gray-500 rounded-2xl p-[30px] flex justify-between items-center" style={{
+          boxShadow:"5px 0px 15px gray"
+        }}>
+         <div className="flex flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col gap-1 items-center border-r-2 border-gray-500 px-[20px]">
+              <p className="text-17px">Check In :</p>
+              <p className="text-gray-500 text-[13px]">Add Date</p>
+            </div>
+            <div className="flex flex-col gap-1 items-center border-r-2 border-gray-500 px-[20px]">
+              <p className="text-17px">Check Out :</p>
+              <p className="text-gray-500 text-[13px]">Add Date</p>
+            </div>
+            <div className="flex flex-col gap-1 items-center px-[20px]">
+              <p className="text-17px">Guests</p>
+              <p className="text-gray-500 text-[13px]">0 guests</p>
+            </div>
+         </div>
+         <div>
+          <button className="h-[50px] w-[300px] rounded-2xl bg-black text-white">Check For Availability</button>
+         </div>
+        </div>
       </div>
     </div>
   );
