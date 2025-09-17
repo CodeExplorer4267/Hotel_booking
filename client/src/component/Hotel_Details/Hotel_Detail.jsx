@@ -194,14 +194,47 @@ const Hotel_Detail = () => {
         </div>
         <hr className="text-gray-500 w-[90%] h-[10px] mx-auto" />
       </div>
-      <div className="location_review_part">
-        <div>
-          <h2>Hotel Location</h2>
+      <div className="location_review_part flex flex-col mt-[12px]">
+        <div className="flex flex-col gap-6">
+          <h2 className="text-center text-black font-bold text-3xl">
+            Hotel Location
+          </h2>
           <HotelMap
             lat={hotelLat}
             lng={hotelLng}
-            hotelName="Grand Central Hotel"
+            hotelName="The Emberwood Inn."
           />
+          <div className="flex flex-row justify-center items-center pl-3 pr-3 gap-0.5 w-[100%]">
+            <FaLocationDot
+              className="inline-block mr-2 text-gray-400"
+              size={20}
+            />
+            <span className="text-gray-500 text-[20px]">Delhi, India</span>
+          </div>
+          <p className="text-center text-gray-500 font-bold">
+            It's like a home away from home.
+          </p>
+        </div>
+        <div className="flex flex-row w-[100%] h-[400px] border-1 justify-center items-center p-[10px] relative">
+          <div className="h-[20%] w-[50%] border-2 absolute top-[30px] left-[30px] flex flex-row items-center gap-4 p-[10px] rounded-[16px]">
+            <img
+              src="./client_2.jpeg"
+              alt="Error"
+              className="h-[50px] w-[40px] rounded-full"
+            />
+            <div className="flex flex-col gap-1">
+              <h1>Hosted By Emma</h1>
+              <div className="flex flex-row justify-evenly items-center gap-5">
+                <p>200+ Reviews</p>
+                <p>Response Rate:100%</p>
+                <p>Response Time:30min</p>
+              </div>
+            </div>
+            <button className="h-[30px] w-[120px] bg-black text-white p-[3px] rounded-2xl">Contact Now</button>
+          </div>
+          <div className="h-[100%] w-[50%]">
+
+          </div>
         </div>
       </div>
     </div>

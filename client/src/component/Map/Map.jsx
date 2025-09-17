@@ -18,7 +18,7 @@ L.Icon.Default.mergeOptions({
 const HotelMap = ({ lat, lng, hotelName }) => {
   return (
     <div style={{ height: "400px", width: "100%" }}>
-      <MapContainer center={[lat, lng]} zoom={15} style={{ height: "100%", width: "100%" }}>
+      <MapContainer center={[lat, lng]} zoom={15} style={{ height: "100%", width: "90%",margin:"auto" }}>
         {/* Map tiles */}
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
