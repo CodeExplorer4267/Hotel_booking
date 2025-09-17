@@ -3,6 +3,10 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaWifi } from "react-icons/fa6";
 import { MdFreeBreakfast } from "react-icons/md";
 import { MdOutlineCleaningServices } from "react-icons/md";
+import { FaHome } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
+import { IoLocation } from "react-icons/io5";
+import { FaHeart } from "react-icons/fa";
 
 const Hotel_Detail = () => {
   return (
@@ -74,7 +78,7 @@ const Hotel_Detail = () => {
         </div>
         <hr className="text-grey w-[90%] h-[10px] my-[20px] mx-auto"/>
       </div>
-      <div className="middle_part flex flex-col items-center gap-5">
+      <div className="middle_part flex flex-col items-center gap-7">
         <div className="check w-[90%] h-[100px] border-1 border-gray-500 rounded-2xl p-[30px] flex justify-between items-center" style={{
           boxShadow:"5px 0px 15px gray"
         }}>
@@ -96,6 +100,39 @@ const Hotel_Detail = () => {
           <button className="h-[50px] w-[300px] rounded-2xl bg-black text-white">Check For Availability</button>
          </div>
         </div>
+        <div className="properties w-[100%] h-[400px] px-[70px] py-[70px]">
+          <div className="flex flex-col gap-5">
+             <div className="flex flex-row gap-4 items-center">
+                  <FaHome size={20}/>
+                <div className="flex flex-col gap-0.1">
+                   <p className="text-[17px] font-semibold">Clean Room</p>
+                   <p className="text-[14px] text-gray-500 font-semibold">You will have the clean room for you.</p>
+                </div>
+             </div>
+             <div className="flex flex-row gap-4 items-center">
+                  <FaCheckCircle size={20}/>
+                <div className="flex flex-col gap-0.1">
+                   <p className="text-[17px] font-semibold">Enhanced Clean</p>
+                   <p className="text-[14px] text-gray-500 font-semibold">This host is committed to Staybnb's cleaning process.</p>
+                </div>
+             </div>
+             <div className="flex flex-row gap-4 items-center">
+                  <IoLocation size={20}/>
+                <div className="flex flex-col gap-0.1">
+                   <p className="text-[17px] font-semibold">Great Location</p>
+                   <p className="text-[14px] text-gray-500 font-semibold">90% of the recent guests gave the location a 5 star rating.</p>
+                </div>
+             </div>
+             <div className="flex flex-row gap-4 items-center">
+                  <FaHeart size={20}/>
+                <div className="flex flex-col gap-0.1">
+                   <p className="text-[17px] font-semibold">Great check-in experience</p>
+                   <p className="text-[14px] text-gray-500 font-semibold">100% of our recent guests gave the checking process a 5 star rating.</p>
+                </div>
+             </div>
+          </div>
+        </div>
+        <hr className="text-grey w-[90%] h-[10px] mx-auto"/>
       </div>
     </div>
   );
