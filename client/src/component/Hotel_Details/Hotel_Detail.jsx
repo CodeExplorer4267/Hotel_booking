@@ -12,6 +12,8 @@ const Hotel_Detail = () => {
   const hotelLat = 34.0522;
   const hotelLng = -118.2437;
 
+  
+
   return (
     <div className="outer_container px-[90px] py-[130px] flex flex-col">
       <div className="heading_part flex flex-col items-start gap-4">
@@ -215,8 +217,8 @@ const Hotel_Detail = () => {
             It's like a home away from home.
           </p>
         </div>
-        <div className="flex flex-row w-[100%] h-[400px] border-1 justify-center items-center p-[10px] relative">
-          <div className="h-[20%] w-[50%] border-2 absolute top-[30px] left-[30px] flex flex-row items-center gap-4 p-[10px] rounded-[16px]">
+        <div className="flex flex-row w-[100%] h-[400px] border-1 justify-center items-center p-[20px] mt-[15px]">
+          <div className="h-[25%] w-[50%] border-2 flex flex-row items-center gap-4 p-[10px] rounded-[16px]">
             <img
               src="./client_2.jpeg"
               alt="Error"
@@ -232,8 +234,22 @@ const Hotel_Detail = () => {
             </div>
             <button className="h-[30px] w-[120px] bg-black text-white p-[3px] rounded-2xl">Contact Now</button>
           </div>
-          <div className="h-[100%] w-[50%]">
-
+          <div className="h-[100%] w-[50%] flex flex-col gap-4 justify-end items-center">
+             <div className="review_area fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50">
+               <form className="flex flex-col gap-4 items-center border-1 rounded-2xl p-[10px] absolute top-[285%] left-[40%] w-[300px] h-[300px] bg-white">
+                <h1>Write a Comment :</h1>
+                   <textarea className="border-1 p-2 rounded resize-none w-[100%] h-[60%]"
+                   rows={3}
+                   placeholder="Enter your review"
+                   
+                   >
+                   </textarea>
+                   <button className="h-[30px] w-[120px] bg-black rounded-2xl p-[3px] text-white">Create</button>
+               </form> 
+             </div>
+             <div>
+              <button className="h-[30px] w-[140px] bg-black rounded-2xl p-[3px] text-white" >Create a review</button>
+             </div>
           </div>
         </div>
       </div>
