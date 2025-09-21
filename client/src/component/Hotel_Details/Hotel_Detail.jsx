@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaWifi } from "react-icons/fa6";
 import { MdFreeBreakfast } from "react-icons/md";
@@ -11,9 +11,24 @@ import HotelMap from "../Map/Map";
 const Hotel_Detail = () => {
   const hotelLat = 34.0522;
   const hotelLng = -118.2437;
-
-  
-
+  const [showform, setshowform] = useState(false);
+  const [comment, setcomment] = useState("");
+  const [comments, setcomments] = useState([]);
+  const handleReview = () => {
+    setshowform(true);
+  };
+  const handleChange = (e) => {
+    setcomment(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (comment.trim() === "") {
+      return;
+    }
+    setcomments([...comments, comment]);
+    setcomment("");
+    setshowform(false)
+  };
   return (
     <div className="outer_container px-[90px] py-[130px] flex flex-col">
       <div className="heading_part flex flex-col items-start gap-4">
@@ -232,24 +247,56 @@ const Hotel_Detail = () => {
                 <p>Response Time:30min</p>
               </div>
             </div>
-            <button className="h-[30px] w-[120px] bg-black text-white p-[3px] rounded-2xl">Contact Now</button>
+            <button className="h-[30px] w-[120px] bg-black text-white p-[3px] rounded-2xl">
+              Contact Now
+            </button>
           </div>
           <div className="h-[100%] w-[50%] flex flex-col gap-4 justify-end items-center">
-             <div className="review_area fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50">
-               <form className="flex flex-col gap-4 items-center border-1 rounded-2xl p-[10px] absolute top-[285%] left-[40%] w-[300px] h-[300px] bg-white">
-                <h1>Write a Comment :</h1>
-                   <textarea className="border-1 p-2 rounded resize-none w-[100%] h-[60%]"
-                   rows={3}
-                   placeholder="Enter your review"
-                   
-                   >
-                   </textarea>
-                   <button className="h-[30px] w-[120px] bg-black rounded-2xl p-[3px] text-white">Create</button>
-               </form> 
-             </div>
-             <div>
-              <button className="h-[30px] w-[140px] bg-black rounded-2xl p-[3px] text-white" >Create a review</button>
-             </div>
+            {showform && (
+              <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center">
+                <form className="flex flex-col gap-4 items-center border-1 rounded-2xl p-[14px] w-[400px] h-[300px] bg-white z-50">
+                  <h1>Write a Comment :</h1>
+                  <textarea
+                    className="border-1 p-2 rounded resize-none w-[100%] h-[60%]"
+                    rows={3}
+                    placeholder="Enter your review"
+                    value={comment}
+                    onChange={handleChange}
+                  ></textarea>
+                  <button
+                    className="h-[30px] w-[120px] bg-black rounded-2xl p-[3px] text-white"
+                    onClick={handleSubmit}
+                  >
+                    Create
+                  </button>
+                </form>
+              </div>
+            )}
+            <div className="h-[100%] w-[80%] border-1">
+              {comments.length === 0 ? (
+                <div className="p-4 overflow-y-auto flex justify-center items-center">
+                  <h1 className="font-bold text-2xl">No comments to show</h1>
+                </div>
+              ) : (
+                <div>
+                  {
+                    comments.map((c,index)=>{
+                      return <div className="h-[40px] w-[100%] border-1 p-[5px]" key={index}>
+                          {c}
+                      </div> 
+                    })
+                  }
+                </div>
+              )}
+            </div>
+            <div>
+              <button
+                className="h-[30px] w-[140px] bg-black rounded-2xl p-[3px] text-white"
+                onClick={handleReview}
+              >
+                Create a review
+              </button>
+            </div>
           </div>
         </div>
       </div>

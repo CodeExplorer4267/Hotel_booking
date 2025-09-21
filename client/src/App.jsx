@@ -5,6 +5,7 @@ import Home from "./component/Home/Home";
 import { Route, Routes } from "react-router-dom";
 import Hotels from "./component/hotelspage/Hotels";
 import Hotel_Detail from "./component/Hotel_Details/Hotel_Detail";
+import Footer from "./component/Footer/Footer";
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
 
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/hotels" element={<Hotels />} /> */}
         <Route path="/" element={<Hotel_Detail/>}/>
       </Routes>
+      <Footer/>
     </div>
   );
 };
