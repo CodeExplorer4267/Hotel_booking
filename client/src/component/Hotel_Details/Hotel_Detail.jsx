@@ -8,12 +8,16 @@ import { FaCheckCircle } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
 import HotelMap from "../Map/Map";
+import { useUser } from "@clerk/clerk-react";
+
 const Hotel_Detail = () => {
   const hotelLat = 34.0522;
   const hotelLng = -118.2437;
   const [showform, setshowform] = useState(false);
   const [comment, setcomment] = useState("");
   const [comments, setcomments] = useState([]);
+  const [checkForm, setcheckForm] = useState(false);
+
   const handleReview = () => {
     setshowform(true);
   };
@@ -27,7 +31,7 @@ const Hotel_Detail = () => {
     }
     setcomments([...comments, comment]);
     setcomment("");
-    setshowform(false)
+    setshowform(false);
   };
   return (
     <div className="outer_container px-[90px] py-[130px] flex flex-col">
@@ -135,6 +139,72 @@ const Hotel_Detail = () => {
           }}
         >
           <div className="flex flex-row gap-6 justify-center items-center">
+            {checkForm && (
+              <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50">
+                <form className="h-auto w-[400px] bg-white rounded-2xl shadow-2xl p-6 flex flex-col gap-5">
+                  {/* Heading */}
+                  <h1 className="text-2xl font-semibold text-center text-gray-800">
+                    Book Your Stay 🏨
+                  </h1>
+                  <p className="font-bold">Price : 3000/Night</p>
+                  {/* Check-in Date */}
+                  <div className="flex flex-col gap-1 w-full">
+                    <label className="text-sm font-medium text-gray-600">
+                      Check-In
+                    </label>
+                    <input
+                      type="date"
+                      className="border border-gray-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
+                      required
+                    />
+                  </div>
+
+                  {/* Check-out Date */}
+                  <div className="flex flex-col gap-1 w-full">
+                    <label className="text-sm font-medium text-gray-600">
+                      Check-Out
+                    </label>
+                    <input
+                      type="date"
+                      className="border border-gray-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
+                      required
+                    />
+                  </div>
+
+                  {/* Guests */}
+                  <div className="flex flex-col gap-1 w-full">
+                    <label className="text-sm font-medium text-gray-600">
+                      Guests
+                    </label>
+                    <input
+                      type="number"
+                      min="1"
+                      placeholder="Number of guests"
+                      className="border border-gray-300 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all"
+                      required
+                    />
+                  </div>
+
+                  {/* Buttons */}
+                  <div className="flex justify-between items-center gap-3 w-full mt-2">
+                    <button
+                      type="button"
+                      onClick={() => setcheckForm(false)}
+                      className="w-1/2 border border-gray-400 text-gray-700 py-2 rounded-lg hover:bg-gray-100 transition-all"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      className="w-1/2 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-all"
+                    >
+                      Confirm Booking
+                    </button>
+                  </div>
+                </form>
+              </div>
+            )}
+
             <div className="flex flex-col gap-1 items-center border-r-2 border-gray-500 px-[20px]">
               <p className="text-17px">Check In :</p>
               <p className="text-gray-500 text-[13px]">Add Date</p>
@@ -149,7 +219,10 @@ const Hotel_Detail = () => {
             </div>
           </div>
           <div>
-            <button className="h-[50px] w-[300px] rounded-2xl bg-black text-white">
+            <button
+              onClick={() => setcheckForm(true)}
+              className="h-[50px] w-[300px] rounded-2xl bg-black text-white"
+            >
               Check For Availability
             </button>
           </div>
@@ -279,13 +352,16 @@ const Hotel_Detail = () => {
                 </div>
               ) : (
                 <div>
-                  {
-                    comments.map((c,index)=>{
-                      return <div className="h-[40px] w-[100%] border-1 p-[5px]" key={index}>
-                          {c}
-                      </div> 
-                    })
-                  }
+                  {comments.map((c, index) => {
+                    return (
+                      <div
+                        className="h-[40px] w-[100%] border-1 p-[5px]"
+                        key={index}
+                      >
+                        {c}
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>
