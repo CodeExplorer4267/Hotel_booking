@@ -2,12 +2,16 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import nodemailer from 'nodemailer';
+import { connectDB } from './db/db.js';
 
 const app=express();
 app.use(cors());
 app.use(bodyParser.json());
 
 const PORT=5000;
+
+//connect to database
+connectDB()
 
 app.get('/',(req,res)=>{
     res.send("Hello world")

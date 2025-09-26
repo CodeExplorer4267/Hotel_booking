@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
+import { FaHotel } from "react-icons/fa6";
 
 export const Navbar = () => {
   const navLinks = [
@@ -82,7 +83,16 @@ export const Navbar = () => {
           } h-10 transition-all duration-500`}
         />
         {isSignedIn ? (
-          <UserButton />
+          <UserButton
+          >
+            <UserButton.MenuItems>
+              <UserButton.Link
+                label="My Bookings"
+                labelIcon={<FaHotel/>}
+                href="/my-bookings"
+              />
+            </UserButton.MenuItems>
+          </UserButton>
         ) : (
           <button
             onClick={openSignIn}

@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import Hotels from "./component/hotelspage/Hotels";
 import Hotel_Detail from "./component/Hotel_Details/Hotel_Detail";
 import Footer from "./component/Footer/Footer";
+import MyBookings from "./component/MyBookings/MyBookings";
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
   
@@ -13,9 +14,10 @@ const App = () => {
     <div>
       {!isOwnerPath && <Navbar />}
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         {/* <Route path="/hotels" element={<Hotels />} /> */}
-        {/* <Route path="/" element={<Hotel_Detail />} /> */}
+        <Route path="/" element={<Hotel_Detail />} />
+        {/* <Route path="/my-bookings" element={<MyBookings/>}/> */}
       </Routes>
       <Footer />
     </div>
