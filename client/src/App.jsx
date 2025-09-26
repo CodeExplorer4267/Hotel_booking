@@ -13,11 +13,11 @@ const App = () => {
     <div>
       {!isOwnerPath && <Navbar />}
       <Routes>
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/hotels" element={<Hotels />} /> */}
-        <Route path="/" element={<Hotel_Detail/>}/>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/hotels" element={<Hotels />} /> */}
+        {/* <Route path="/" element={<Hotel_Detail />} /> */}
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
