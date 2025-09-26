@@ -8,7 +8,7 @@ import Hotel_Detail from "./component/Hotel_Details/Hotel_Detail";
 import Footer from "./component/Footer/Footer";
 const App = () => {
   const isOwnerPath = useLocation().pathname.includes("owner");
-
+  
   return (
     <div>
       {!isOwnerPath && <Navbar />}
@@ -21,5 +21,7 @@ const App = () => {
     </div>
   );
 };
+
+
 
 export default App;
